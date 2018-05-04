@@ -1,5 +1,6 @@
-<article id="nodo">
+<section id="page">
   {{ page.content }}
-  {{ tabs }}
-  <h4>hola nodo</h4>
-</article>
+  {% if tabs %}  
+    <div class="tabs">{{ tabs }}</div>
+  {% endif %}
+</section>

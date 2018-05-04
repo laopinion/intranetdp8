@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 {% if ie_enabled_versions.ie9 or ie_enabled_versions.ie8 %}
   <!--[if lt IE 7]>     <html{{ html_attributes.addClass('no-js', 'lt-ie9', 'lt-ie8', 'lt-ie7') }}><![endif]-->
@@ -9,10 +8,25 @@
   <html{{ html_attributes }}>
 {% endif %}
   <head>
+    <head-placeholder token="{{ placeholder_token }}">
     <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token }}">
+    <js-placeholder token="{{ placeholder_token }}">
   </head>
   <body>
-    {% include '@architect/header.html.twig' %}
+
+    {{ page_top }}
+
+    {% include '@intranet/header.html.twig' %}
     {{ page }}
+    {{ page_bottom }}
+
+    <js-bottom-placeholder token="{{ placeholder_token }}">
+    {% if browser_sync.enabled %}
+      <script id="__bs_script__">
+      document.write("<script async src='http://{{ browser_sync.host }}:{{ browser_sync.port }}/browser-sync/browser-sync-client.js'><\/script>".replace("HOST", location.hostname));
+      </script>
+    {% endif %}
   </body>
 </html>
+

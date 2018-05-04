@@ -1,6 +1,12 @@
 name: Intranet
 type: theme
 description: "Tema creado para la intranet"
+
+regions:
+  header: Header
+  content: Content
+  footer: Footer
+
 core: 8.x
 package: custom
 version: 1.0
