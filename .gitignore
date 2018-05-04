@@ -8,5 +8,10 @@ sites/*/private
 .sass-cache/
 sites/default/themes/*/css/style.css.map
 stylesheets/
-node_modules/
 .htaccess
+*.scssc
+*.sassc
+.sass-cache
+*.map
+node_modules
+.DS_Store

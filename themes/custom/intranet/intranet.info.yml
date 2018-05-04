@@ -1,0 +1,6 @@
+name: Intranet
+type: theme
+description: "Tema creado para la intranet"
+core: 8.x
+package: custom
+version: 1.0
